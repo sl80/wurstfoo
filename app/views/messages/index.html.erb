@@ -7,17 +7,19 @@
     <th></th>
   </tr>
   
-  <%= render :partial => :message, :collection => @messages.includes(:tags) %>
+  <%= render :partial => :message, :collection => @messages.includes(:tags), :locals => {:options => true} %>
 </table>
+
+
+<h1>Messages from my friends</h1>
 
 <% @messages.tags.each do |tag| %>
   <%= link_to tag.name, messages_path(:tag => tag.name) %>
 <% end %>
-
-<h1>Messages from my friends</h1>
+  <%= link_to 'all', messages_path %>
 
 <table>
-  <%= render :partial => :message, :collection => @friends_messages %>
+  <%= render :partial => :message, :collection => @friends_messages.includes(:tags), :locals => {:options => false} %>
 </table>
 
 <br />
