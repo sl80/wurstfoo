@@ -1,0 +1,25 @@
+<h1>My messages</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+  <%= render :partial => :message, :collection => @messages.includes(:tags) %>
+</table>
+
+<% @messages.tags.each do |tag| %>
+  <%= link_to tag.name, messages_path(:tag => tag.name) %>
+<% end %>
+
+<h1>Messages from my friends</h1>
+
+<table>
+  <%= render :partial => :message, :collection => @friends_messages %>
+</table>
+
+<br />
+<%= link_to 'New Message', new_message_path %>
+<%= link_to 'Users', users_path %>

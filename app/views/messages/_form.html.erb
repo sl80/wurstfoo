@@ -1,0 +1,23 @@
+<%= form_for(@message) do |f| %>
+  <%= f.label :title %>:
+  <%= f.text_field :title %><br />
+  <%= f.label :text %>:
+  <%= f.text_area :text %><br />
+  <%= f.label :tag_names %>:
+  <%= f.text_field :tag_names %><br />
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+== Wurstfoo
+
+von einem erfahrenen Entwicker, der bisher noch nicht mit Rails bzw. OR Mappern gearbeitet hat, wurde ich gefragt, ob man mit Rails auch komplexe SQL anfragen machen kann. 
+
+Als Beispiel wurde genannt:
+"ich möchte alle Nachrichten meiner Freunde sehen, die mich erwähnen (d.h. ein bestimmtes Tag benutzen.)"
+
+Daher dieser in ein paar Stunden zusammengebaute Proof of Concept.
