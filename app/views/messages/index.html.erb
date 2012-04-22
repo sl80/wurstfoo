@@ -10,7 +10,6 @@
   <%= render :partial => :message, :collection => @messages.includes(:tags), :locals => {:options => true} %>
 </table>
 
-
 <h1>Messages from my friends</h1>
 
 <% @messages.tags.each do |tag| %>
